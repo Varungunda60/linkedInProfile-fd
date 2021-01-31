@@ -17,7 +17,6 @@ export class PostsComponent implements OnInit {
     this.service.setUrl(this.url);
     this.service.get().subscribe(
       response => {this.posts = response;
-                   console.log('hello world');
       },
          error => { this.checkError(error); }
     );

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {AppError} from '../demo/validators/app-error';
-import {NotFoundError} from '../demo/validators/not-found-error';
-import {BadRequest} from '../demo/validators/bad-request';
+import {AppError} from '../customErrorValidators/app-error';
+import {NotFoundError} from '../customErrorValidators/not-found-error';
+import {BadRequest} from '../customErrorValidators/bad-request';
 
 @Injectable({
   providedIn: 'root'
