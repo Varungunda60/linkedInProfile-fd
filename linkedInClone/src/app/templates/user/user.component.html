@@ -1,0 +1,35 @@
+<div class="container">
+<h1> Create User</h1>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="form-group">
+      <label for="firstName"> first name</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" #firstName="ngModel" ngModel >
+      <label for="lastName"> last name</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" #lastName="ngModel" ngModel >
+      <label for="tagLine"> tagline</label>
+      <input type="text" class="form-control" id="tagLine" name="tagLine" #tagLine="ngModel" ngModel >
+      <label for="backgroundUrl"> Background Url</label>
+      <input type="text" class="form-control" id="backgroundUrl" name="backgroundUrl">
+      <label for="url"> url </label>
+      <input type="text" class="form-control" id="url" name="url" #url="ngModel" ngModel >
+    </div>
+    <div class="form-group">
+      <label for="email"> email </label>
+      <input type="email" class="form-control" id="email" name=" email " #email="ngModel" ngModel >
+      <label for="password"> password </label>
+      <input type="password" class="form-control" id="password" name="password" #password="ngModel" ngModel >
+    </div>
+    <div class="form-group">
+      <label for="skillName"> skillName </label>
+      <input  type="text" class="form-control" id="skillName" name="skillName" #skillName="ngModel" ngModel >
+    </div>
+    <button  [disabled]="f.pristine" class="btn btn-primary" (click)="onSubmit()"> submit </button>
+  </form>
+  <hr>
+  <button class=" btn btn-primary" [routerLink]="" > add Skills</button>
+  <br>
+  <button class=" btn btn-primary"> add Education Details</button>
+  <br>
+  <button class=" btn btn-primary"> add Experience</button>
+</div>
+{{ f.value | json}}
