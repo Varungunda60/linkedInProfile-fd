@@ -11,8 +11,7 @@ import { ExperienceComponent } from './templates/experience/experience.component
 import { SkillsComponent } from './templates/skills/skills.component';
 import { UserComponent } from './templates/user/user.component';
 import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-
+import { routing} from './routes/app.routing';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,7 @@ import {RouterModule} from '@angular/router';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    routing
   ],
   providers: [
     PostService,

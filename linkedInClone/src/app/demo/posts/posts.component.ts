@@ -11,7 +11,7 @@ import {BadRequest} from '../../customErrorValidators/bad-request';
 })
 export class PostsComponent implements OnInit {
  posts: any | undefined;
- private url = 'https://jsonplaceholder.typicode.com/posts';
+ private url = 'https://localhost8080/user';
   constructor( private service: PostService ) {
   }
   ngOnInit(): void {
