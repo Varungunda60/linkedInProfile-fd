@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../../service/user.service';
 import {ActivatedRoute} from '@angular/router';
+import {ProfileService} from '../../service/profile.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -9,16 +10,18 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private userService: UserService, private activeRoute: ActivatedRoute) {
-  }
   id: number;
+  user: any;
+
+  constructor(private profileService: ProfileService, private activeRoute: ActivatedRoute, private http: HttpClient) {
+  }
+
   ngOnInit(): void {
-    this.activeRoute.params.subscribe(
-      (params) => {
-        console.log(params);
-      }
-    );
-    this.userService.setUrl('https://localhost:8080/user')
+    this.id = this.activeRoute.snapshot.params.id;
+    this.profileService.setUrl('http://localhost:8080/user/' + this.id);
+    this.profileService.get().subscribe(data => {
+      this.user = data;
+    });
   }
 
 }

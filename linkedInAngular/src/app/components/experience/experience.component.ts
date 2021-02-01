@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ExperienceService} from '../../service/experience.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-experience',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienceComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  data: any;
 
-  ngOnInit(): void {
+  constructor(private experienceService: ExperienceService, private activeRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.id = this.activeRoute.snapshot.params.id;
+    this.experienceService.setUrl('http://localhost:8080/user/Experience/' + this.id);
+    this.experienceService.get().subscribe(
+      (data) => {
+        this.data = data;
+      });
+  }
 }

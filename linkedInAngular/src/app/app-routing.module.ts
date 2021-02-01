@@ -13,11 +13,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'education',
+    path: 'education/:id',
     component: EducationComponent
   },
   {
-    path: 'experience',
+    path: 'experience/:id',
     component: ExperienceComponent
   },
   {
@@ -29,7 +29,7 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'skills',
+    path: 'skills/:id',
     component: SkillsComponent
   },
 

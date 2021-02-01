@@ -9,28 +9,29 @@ import {User} from '../../componentClassses/user';
 })
 export class UserComponent implements OnInit {
   users: [];
-  Tuser: User = new User('', '', '','','','','');
+  Tuser: User = new User('', '', '', '', '', '', '');
+
   constructor(private userService: UserService) {
   }
 
   // tslint:disable-next-line:typedef
   post() {
     // console.log(this.user);
-    this.Tuser.firstName = 'hfjgjnknsa';
+    this.Tuser.firstName = 'hgnsalksvbjh';
     this.Tuser.lastName = 'jhfka';
     this.Tuser.backgroundUrl = 'khfask';
-    this.Tuser.name = 'kfph';
+    this.Tuser.name = 'kfphhjhjfjgh';
     this.Tuser.tagLine = 'khfsjkhg';
     this.Tuser.password = 'hfsagihga';
     this.Tuser.url = 'ghhhgjhksjk';
     console.log(this.Tuser);
     this.userService.create(this.Tuser).subscribe((data) => {
-      console.log(data);
-    },
-    error => {
-      console.log('in error');
-      console.log(error);
-    });
+        console.log(data);
+      },
+      error => {
+        console.log('in error');
+        console.log(error);
+      });
     this.userService.get().subscribe((data) => {
         console.log(data);
         this.users = data;
