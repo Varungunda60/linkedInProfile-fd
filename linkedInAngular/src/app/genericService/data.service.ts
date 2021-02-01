@@ -21,10 +21,8 @@ export class DataService {
   }
 
   get(): Observable<any> {
-    console.log('in get');
     return this.http.get(this.url, {responseType: 'json'})
       .pipe(catchError((err) => {
-        console.log('in error');
         return this.handleError;
       }));
   }

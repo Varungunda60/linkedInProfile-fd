@@ -10,8 +10,8 @@
   Users
   <div style="padding: 13px;">
     <ul *ngFor="let user of users" style="margin-top:11px;">
-      <li> {{user| json}}
-<!--        <a [routerLink]="['/profile', user.id]">Go to Profile  </a>-->
+      <li> {{ user.name }},{{ user.id}}
+        <a [routerLink]="['/user',user.id ]">Go to Profile  </a>
       </li>
     </ul>
   </div>

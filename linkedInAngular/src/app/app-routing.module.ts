@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {EducationComponent} from './components/education/education.component';
 import {ExperienceComponent} from './components/experience/experience.component';
 import {UserComponent} from './components/user/user.component';
 import {SkillsComponent} from './components/skills/skills.component';
+import {ProfileComponent} from './components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
     component: ExperienceComponent
   },
   {
+    path: 'user/:id',
+    component: ProfileComponent
+  },
+  {
     path: 'user',
     component: UserComponent
   },
@@ -27,10 +32,12 @@ const routes: Routes = [
     path: 'skills',
     component: SkillsComponent
   },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

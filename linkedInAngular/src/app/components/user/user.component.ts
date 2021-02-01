@@ -9,28 +9,37 @@ import {User} from '../../componentClassses/user';
 })
 export class UserComponent implements OnInit {
   users: [];
-  user: User = new User('', '', '','','','','');
+  Tuser: User = new User('', '', '','','','','');
   constructor(private userService: UserService) {
   }
 
   // tslint:disable-next-line:typedef
   post() {
-    console.log(this.user);
-    this.user.firstName = 'hfjsa';
-    this.user.lastName = 'jhfka';
-    this.user.backgroundUrl = 'khfask';
-    this.user.name = 'kffkh';
-    this.user.tagLine = 'khfsjkhg';
-    this.user.password = 'hfsagihga';
-    this.user.url = 'ghhhgjhksjk';
-    console.log(this.user);
-    this.userService.create(this.user).subscribe((data) => {
+    // console.log(this.user);
+    this.Tuser.firstName = 'hfjgjnknsa';
+    this.Tuser.lastName = 'jhfka';
+    this.Tuser.backgroundUrl = 'khfask';
+    this.Tuser.name = 'kfph';
+    this.Tuser.tagLine = 'khfsjkhg';
+    this.Tuser.password = 'hfsagihga';
+    this.Tuser.url = 'ghhhgjhksjk';
+    console.log(this.Tuser);
+    this.userService.create(this.Tuser).subscribe((data) => {
       console.log(data);
     },
     error => {
       console.log('in error');
       console.log(error);
     });
+    this.userService.get().subscribe((data) => {
+        console.log(data);
+        this.users = data;
+        // console.log(this.users);
+      },
+      error => {
+        // console.log('in error');
+        console.log(error);
+      });
   }
 
   ngOnInit(): void {
