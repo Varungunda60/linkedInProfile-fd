@@ -1,9 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {EducationComponent} from './components/education/education.component';
-import {ExperienceComponent} from './components/experience/experience.component';
 import {UserComponent} from './components/user/user.component';
-import {SkillsComponent} from './components/skills/skills.component';
 import {ProfileComponent} from './components/profile/profile.component';
 import {AddskillComponent} from './addskill/addskill.component';
 import {AddeducationComponent} from './addeducation/addeducation.component';
@@ -13,14 +10,6 @@ const routes: Routes = [
   {
     path: '',
     component: UserComponent
-  },
-  {
-    path: 'education/:id',
-    component: EducationComponent
-  },
-  {
-    path: 'experience/:id',
-    component: ExperienceComponent
   },
   {
     path: 'user/:id',
@@ -41,10 +30,6 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserComponent
-  },
-  {
-    path: 'skills/:id',
-    component: SkillsComponent
   },
 
 ];
