@@ -2,9 +2,9 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {UserComponent} from './components/user/user.component';
 import {ProfileComponent} from './components/profile/profile.component';
-import {AddskillComponent} from './addskill/addskill.component';
-import {AddeducationComponent} from './addeducation/addeducation.component';
-import {AddexperienceComponent} from './addexperience/addexperience.component';
+import {AddskillComponent} from './components/addskill/addskill.component';
+import {AddeducationComponent} from './components/addeducation/addeducation.component';
+import {AddexperienceComponent} from './components/addexperience/addexperience.component';
 
 const routes: Routes = [
   {

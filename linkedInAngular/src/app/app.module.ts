@@ -7,9 +7,9 @@ import { UserComponent } from './components/user/user.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
-import { AddeducationComponent } from './addeducation/addeducation.component';
-import { AddexperienceComponent } from './addexperience/addexperience.component';
-import { AddskillComponent } from './addskill/addskill.component';
+import { AddeducationComponent } from './components/addeducation/addeducation.component';
+import { AddexperienceComponent } from './components/addexperience/addexperience.component';
+import { AddskillComponent } from './components/addskill/addskill.component';
 
 @NgModule({
   declarations: [

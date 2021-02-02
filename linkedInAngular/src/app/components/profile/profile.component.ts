@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ProfileService} from '../../service/profile.service';
 import {HttpClient} from '@angular/common/http';
+import {ProfileService} from '../../service/profile.service';
 
 @Component({
   selector: 'app-profile',
