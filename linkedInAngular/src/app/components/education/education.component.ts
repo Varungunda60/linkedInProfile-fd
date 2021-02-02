@@ -9,16 +9,17 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class EducationComponent implements OnInit {
   id: number;
-  data: any;
+  educations: any;
+  edit = true;
+  add = true;
   constructor(private educationService: EducationService, private activeRoute: ActivatedRoute) { }
-
   ngOnInit(): void {
     this.id = this.activeRoute.snapshot.params.id;
     this.educationService.setUrl('http://localhost:8080/user/education/' + this.id);
     this.educationService.get().subscribe(
       (data) => {
-        this.data = data;
+        this.educations = data;
+        console.log(data);
       });
   }
-
 }

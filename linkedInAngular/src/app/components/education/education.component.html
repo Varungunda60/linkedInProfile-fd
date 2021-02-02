@@ -1,1 +1,50 @@
-<p>education works!</p>
+<div class="container">
+  <div class="education category">
+    <h2>
+      Education Background
+      <span class="right">
+            <button type="button" class="btn btn-default btn-sm" (click)=" edit= !edit ">
+                <span class="glyphicon glyphicon-edit"></span> Edit
+            </button>
+              <button type="button" class="btn btn-default btn-sm" (click)="add= !add">
+                <span class="glyphicon glyphicon-plus"></span> Add
+              </button>
+        </span>
+    </h2>
+<!--    <h4 *ngIf="educations.length == 0">No Skills added!</h4>-->
+
+    <div class="inner" *ngFor="let education of educations">
+      <form #f="ngForm">
+        <div class="form-group">
+          <label ><span>College</span></label>
+          <input type="text" class="form-control" id="college" name="schoolName" [disabled]=edit [(ngModel)]="education.schoolName" >
+        </div>
+        <div class="form-group">
+          <label ><span>Joining Year</span></label>
+          <input type="text" class="form-control" id="joiningYear" name="startDate"  [disabled]=edit [(ngModel)]="education.startDate" >
+        </div>
+        <div class="form-group">
+          <label ><span>Ending Year</span></label>
+          <input type="text" class="form-control" id="endingYear" name="endDate"  [disabled]=edit [(ngModel)]="education.endDate" >
+        </div>
+        <div class="form-group">
+          <label ><span>Course</span></label>
+          <input type="text" class="form-control" id="course" name="fieldOfStudy"  [disabled]=edit [(ngModel)]="education.fieldOfStudy" >
+        </div>
+        <div class="form-group">
+          <label ><span>Degree</span></label>
+          <input type="text" class="form-control" id="degree" name="degree"  [disabled]=edit [(ngModel)]="education.degree" >
+        </div>
+        <div class="form-group">
+          <label ><span>Grade</span></label>
+          <input type="text" class="form-control" id="grade" name="grade"  [disabled]=edit [(ngModel)]="education.grade" >
+        </div>
+
+        <button type="submit" class="btn btn-default btn-sm" [disabled]=edit >
+          <span class="glyphicon glyphicon-save"></span> Save
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

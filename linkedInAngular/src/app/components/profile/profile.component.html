@@ -1,4 +1,68 @@
-<p>profile works!</p>
-<div class="container">
-  {{user|json}}
-</div>
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+  <div class="my-auto">
+    <h1 class="mb-0">{{user.firstName}}
+      <span class="text-primary">{{user.lastName}}</span>
+    </h1>
+    <p class="mb-5">{{user.tagLine}}</p>
+  </div>
+</section>
+
+<hr>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+  <div class="my-auto">
+    <h2 class="mb-5">Experience</h2>
+    <div *ngIf="user.experience.length === 0">
+      <p class="text-muted">No experiences added</p>
+    </div>
+    <div *ngFor="let experience of user.experience" class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <h3 class="mb-0">{{experience.title}}</h3>
+        <div class="subheading mb-3">{{experience.company.name}}</div>
+        <p>{{experience.headline}}</p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">{{experience.startDate}}- {{experience.endDate}}</span>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-sm "><a>add</a></button>
+</section>
+
+<hr>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+  <div class="my-auto">
+    <h2 class="mb-5">Education</h2>
+    <div *ngIf="user.education.length === 0">
+      <p class="text-muted">No Education added</p>
+    </div>
+    <div *ngFor="let education of user.education" class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <h3 class="mb-0">{{education.schoolName}}</h3>
+        <div class="subheading mb-3">{{education.degree}}</div>
+        <div>{{education.fieldOfStudy}}</div>
+        <p>{{education.grade}}</p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">{{education.startDate}} - {{education.endDate}}</span>
+      </div>
+    </div>
+  </div><button type="button" class="btn btn-sm "><a>add</a></button>
+
+</section>
+
+<hr>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+  <div class="my-auto">
+    <h2 class="mb-5">Skills</h2>
+    <div *ngIf="user.skills.length === 0">
+      <p class="text-muted">No skills added</p>
+    </div>
+    <ul class="fa-ul mb-0">
+      <li *ngFor="let skill of user.skills">{{skill.skillName}}</li>
+    </ul>
+  </div>
+  <button type="button" class="btn btn-sm "><a>add</a></button>
+</section>

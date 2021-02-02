@@ -10,8 +10,9 @@ import {ActivatedRoute} from '@angular/router';
 export class ExperienceComponent implements OnInit {
 
   id: number;
-  data: any;
-
+  experiences: any;
+  edit = false;
+  add = false;
   constructor(private experienceService: ExperienceService, private activeRoute: ActivatedRoute) {
   }
 
@@ -20,7 +21,8 @@ export class ExperienceComponent implements OnInit {
     this.experienceService.setUrl('http://localhost:8080/user/Experience/' + this.id);
     this.experienceService.get().subscribe(
       (data) => {
-        this.data = data;
+        this.experiences = data;
+        console.log(data);
       });
   }
 }

@@ -11,6 +11,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AddeducationComponent } from './addeducation/addeducation.component';
+import { AddexperienceComponent } from './addexperience/addexperience.component';
+import { AddskillComponent } from './addskill/addskill.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddeducationComponent,
+    AddexperienceComponent,
+    AddskillComponent
   ],
   imports: [
     BrowserModule,

@@ -46,12 +46,12 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.userService.setUrl('http://localhost:8080/user');
     this.userService.get().subscribe((data) => {
-        console.log(data);
+        // console.log(data);
         this.users = data;
         console.log(this.users);
       },
       error => {
-        console.log('in error');
+        // console.log('in error');
         console.log(error);
       });
   }

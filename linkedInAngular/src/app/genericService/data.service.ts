@@ -33,7 +33,7 @@ export class DataService {
   }
 
   update(resource: any): Observable<any> {
-    return this.http.post(this.url, JSON.stringify(resource))
+    return this.http.put(this.url, resource)
       .pipe(catchError(err => this.handleError(err)));
   }
 

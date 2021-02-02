@@ -1,19 +1,20 @@
 <div class="container">
-  <div class="card" >
-    <div class="card-header">
-      <!--      <i class="fas fa-graduation-cap"></i>-->
-      HOME
-    </div>
-
-  </div>
-  Users
-  <div style="padding: 13px;">
+  <div class="row">
     <ul *ngFor="let user of users" style="margin-top:11px;">
-      <li> {{ user.name }},{{ user.id}}
-        <a [routerLink]="['/user',user.id ]">Go to Profile  </a>
-      </li>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+          <p class="card-text">{{user.tagLine}}</p>
+          <button type="button" class="btn btn-sm btn-outline-secondary"><a [routerLink]="['/user',user.id ]" >view</a>
+          </button>
+        </div>
+      </div>
     </ul>
   </div>
-<!--  <a routerLink="">Add User </a>-->
-  <button (click)="post()">click</button>
 </div>
+
+
+
+<!--  <a routerLink="">Add User </a>-->
+<button (click)="post()">add New User</button>

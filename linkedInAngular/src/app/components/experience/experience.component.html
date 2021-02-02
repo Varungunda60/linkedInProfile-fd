@@ -1,1 +1,50 @@
- {{data|json}}
+<div class="container">
+  <div class="experience category">
+    <h2>
+      Experience
+      <span class="right">
+                <button type="button" class="btn btn-default btn-sm" (click)=" edit=!edit ">
+                    <span class="glyphicon glyphicon-edit"></span> Edit
+                </button>
+                  <button type="button" class="btn btn-default btn-sm" (click)="add=!add">
+                    <span class="glyphicon glyphicon-plus"></span> Add
+                  </button>
+            </span>
+    </h2>
+<!--    <h4 *ngIf="experiences.length == 0">No Experiences added!</h4>-->
+
+    <div class="inner" *ngFor="let experience of experiences">
+      <form  #f="ngForm">
+        <div class="form-group">
+          <label ><span>title</span></label>
+          <input type="text" class="form-control" id="title" name="title" [disabled]=edit [(ngModel)]="experience.title" >
+        </div>
+        <div class="form-group">
+          <label ><span>location</span></label>
+          <input type="text" class="form-control" id="role" name="role"  [disabled]=edit [(ngModel)]="experience.company.location" >
+        </div>
+        <div class="form-group">
+          <label ><span>Start Date</span></label>
+          <input type="text" class="form-control" id="joiningYear" name="startDate"  [disabled]=edit [(ngModel)]="experience.startDate" >
+        </div>
+        <div class="form-group">
+          <label ><span>Ending Year</span></label>
+          <input type="text" class="form-control" id="endingYear" name="endDate"  [disabled]=edit [(ngModel)]="experience.endDate" >
+        </div>
+        <div class="form-group">
+          <label ><span>Employment Type</span></label>
+          <input type="text" class="form-control" id="employmentType" name="employmentType"  [disabled]=edit [(ngModel)]="experience.employmentType" >
+        </div>
+        <div class="form-group">
+          <label ><span>company</span></label>
+          <input type="text" class="form-control" id="company" name="company"  [disabled]=edit [(ngModel)]="experience.company.name" >
+        </div>
+
+        <button type="submit" class="btn btn-default btn-sm" [disabled]=edit >
+          <span class="glyphicon glyphicon-save"></span> Save
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
