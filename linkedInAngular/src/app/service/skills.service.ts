@@ -10,7 +10,6 @@ export class SkillsService extends DataService{
     super(http);
   }
   setUrl(url: string): void{
-    console.log('in setUrl');
     super.setUrl(url);
   }
 }

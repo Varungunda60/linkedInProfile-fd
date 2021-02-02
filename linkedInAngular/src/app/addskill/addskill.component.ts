@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Skills} from '../componentClassses/skills';
+import {SkillsService} from '../service/skills.service';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-addskill',
@@ -7,9 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddskillComponent implements OnInit {
 
-  constructor() { }
+  skills = new Skills(' ');
+  id: number;
+  skillsData = [];
+
+  constructor(private skillsService: SkillsService, private activeRoute: ActivatedRoute, private router: Router) {
+  }
 
   ngOnInit(): void {
+    this.activeRoute.paramMap.subscribe(params => {
+      const temp = params.get('id');
+      this.id = +temp;
+    });
+    this.skillsService.setUrl('http://localhost:8080/user/Skills/' + this.id);
+    this.skillsService.get().subscribe(data => this.skillsData = data);
+  }
+
+  addMoreSkills(): void {
+    this.skillsService.create(this.skills).subscribe();
+    this.ngOnInit();
+  }
+  addSkills(): void{
+    this.skillsService.create(this.skills).subscribe(
+      (data) => console.log(data)
+    );
+    this.ngOnInit();
+    this.router.navigate(['/user', this.id]);
   }
 
 }
