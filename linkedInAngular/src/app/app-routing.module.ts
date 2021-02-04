@@ -5,11 +5,16 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {AddskillComponent} from './components/addskill/addskill.component';
 import {AddeducationComponent} from './components/addeducation/addeducation.component';
 import {AddexperienceComponent} from './components/addexperience/addexperience.component';
+import {AddUserComponent} from './components/add-user/add-user.component';
 
 const routes: Routes = [
   {
     path: '',
     component: UserComponent
+  },
+  {
+    path: 'addUser',
+    component: AddUserComponent
   },
   {
     path: 'user/:id',

@@ -1,0 +1,24 @@
+<form style="padding-top: 50px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <h5>User Details</h5>
+  <div class="form-group">
+    <label for="firstName">firstName</label>
+    <input [(ngModel)]="user.firstName" class="form-control" id="firstName" name="firstName"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="lastName">lastName</label>
+    <input [(ngModel)]="user.lastName" class="form-control" id="lastName" name="lastName" required #lastName="ngModel" >
+  </div>
+  <div class="form-group">
+    <label for="tagLine">tagLine</label>
+    <input [(ngModel)]="user.tagLine" class="form-control" id="tagLine" name="tagLine" required>
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input type="password" [(ngModel)]="user.password" class="form-control" id="password" name="password" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">add</button>
+</form>
+
+<!--<a class="btn btn-primary" (click)="addUser()" [routerLink]="user">add</a>-->

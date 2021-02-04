@@ -10,7 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddeducationComponent } from './components/addeducation/addeducation.component';
 import { AddexperienceComponent } from './components/addexperience/addexperience.component';
 import { AddskillComponent } from './components/addskill/addskill.component';
-
+import { AddUserComponent} from './components/add-user/add-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { AddskillComponent } from './components/addskill/addskill.component';
     ProfileComponent,
     AddeducationComponent,
     AddexperienceComponent,
-    AddskillComponent
+    AddskillComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

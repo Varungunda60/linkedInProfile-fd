@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
     <ul *ngFor="let user of users" style="margin-top:11px;">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80" alt="Card image cap">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
           <p class="card-text">{{user.tagLine}}</p>
@@ -14,7 +13,4 @@
   </div>
 </div>
 
-
-
-<!--  <a routerLink="">Add User </a>-->
-<button (click)="post()">add New User</button>
+<a class="btn btn-primary" [routerLink]="['addUser']"> add New User</a>
